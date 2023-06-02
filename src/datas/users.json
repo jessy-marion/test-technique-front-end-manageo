@@ -1,0 +1,22 @@
+[
+  {
+    "id": "000",
+    "prénom": "John",
+    "nom": "Doe",
+    "mail": "johndoe@gmail.com"
+  },
+
+  {
+    "id": "007",
+    "prénom": "James",
+    "nom": "Bond",
+    "mail": "jamesbond@gmail.com"
+  },
+
+  {
+    "id": "666",
+    "prénom": "Poison",
+    "nom": "Ivy",
+    "mail": "poisonivy@gmail.com"
+  }
+]

@@ -1,0 +1,10 @@
+.delete {
+  font-size: 3rem;
+  cursor: pointer;
+  color: #1abc9c;
+  display: inline-block;
+
+  &:hover {
+    color: #148f77;
+  }
+}

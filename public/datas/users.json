@@ -1,0 +1,41 @@
+[
+  {
+    "nomdefamille": "Doe",
+    "personnes": [
+      {
+        "id": "000",
+        "prenom": "John",
+        "nom": "Doe",
+        "mail": "johndoe@gmail.com"
+      },
+      {
+        "id": "001",
+        "prenom": "Jeanne",
+        "nom": "Doe",
+        "mail": "jeannedoe@gmail.com"
+      }
+    ]
+  },
+  {
+    "nomdefamille": "Bond",
+    "personnes": [
+      {
+        "id": "007",
+        "prenom": "James",
+        "nom": "Bond",
+        "mail": "jamesbond@gmail.com"
+      }
+    ]
+  },
+  {
+    "nomdefamille": "Ivy",
+    "personnes": [
+      {
+        "id": "666",
+        "prenom": "Poison",
+        "nom": "Ivy",
+        "mail": "poisonivy@gmail.com"
+      }
+    ]
+  }
+]
