@@ -25,10 +25,13 @@ export function User({ user, users, setUsers }) {
   function handleChange(e) {
     if (e.target.name === "last-name") {
       setNom(e.target.value);
+      console.log(nom);
     } else if (e.target.name === "first-name") {
       setPrenom(e.target.value);
+      console.log(prenom);
     } else {
       setMail(e.target.value);
+      console.log(mail);
     }
   }
   function update(familleIndex, personneIndex, users, index, memeFamille) {
@@ -46,13 +49,14 @@ export function User({ user, users, setUsers }) {
       console.log(updatedUser);
       arrayCopy[familleIndex].personnes.splice(personneIndex, 1, updatedUser);
       setUsers(sort([...arrayCopy]));
-    } else if (!memeFamille && index >= 1) {
+    } else if (!memeFamille && index >= 0) {
       console.log("pas bon");
       if (nbPersonnes) {
         arrayCopy[index].personnes.push(updatedUser);
         arrayCopy[familleIndex].personnes.splice(personneIndex, 1);
         setUsers(sort([...users]));
       } else {
+        console.log("voi si c'est la");
         arrayCopy[index].personnes.push(updatedUser);
         arrayCopy.splice(familleIndex, 1);
         setUsers(sort([...arrayCopy]));
@@ -60,6 +64,7 @@ export function User({ user, users, setUsers }) {
       console.log(users);
     } else if (index === -1) {
       console.log("ici");
+      console.log(users);
       if (nbPersonnes) {
         arrayCopy[familleIndex].personnes.splice(personneIndex, 1);
         setUsers(
@@ -98,6 +103,7 @@ export function User({ user, users, setUsers }) {
         update(familleIndex, personneIndex, users, index, false);
       } else {
         console.log("third");
+        console.log(users);
         update(familleIndex, personneIndex, users, index, false);
       }
     }

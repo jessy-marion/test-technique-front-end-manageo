@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export function Window() {
   const [users, setUsers] = useState([]);
 
+  // Récupérer le JSON
   useEffect(() => {
     async function fetchUsers() {
       try {
@@ -33,3 +34,5 @@ export function Window() {
     </div>
   );
 }
+
+// Récupérer les données au plus haut niveau

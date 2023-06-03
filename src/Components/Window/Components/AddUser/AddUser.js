@@ -4,6 +4,7 @@ import sort from "../../../../assets/functions/sort";
 import { onlyLetters } from "../../../../assets/regex/regex";
 import { emailRegEx } from "../../../../assets/regex/regex";
 
+//modèle de l'utilisateur
 class newUser {
   constructor(nom, prenom, mail) {
     this.id = Date.now().toString() + Math.random().toString(36).substring(2);
@@ -18,6 +19,7 @@ export function AddUser({ users, setUsers }) {
   const [prenom, setPrenom] = useState("");
   const [mail, setMail] = useState("");
 
+  //récupération du nom, prénom et mail
   function handleChange(e) {
     if (e.target.name === "last-name") {
       setNom(e.target.value);
@@ -27,7 +29,7 @@ export function AddUser({ users, setUsers }) {
       setMail(e.target.value);
     }
   }
-
+  //Soumission
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -41,10 +43,12 @@ export function AddUser({ users, setUsers }) {
       const index = users.findIndex((obj) => obj.nomdefamille === user.nom);
 
       if (index !== -1) {
+        // si l'utilisateur existe je le push dans la famille qui correspond
         users[index].personnes.push(user);
         setUsers(sort([...users]));
       } else {
         setUsers(
+          // sinon je crée une nouvelle famille
           sort([...users, { nomdefamille: user.nom, personnes: [user] }])
         );
       }
@@ -83,4 +87,4 @@ export function AddUser({ users, setUsers }) {
   );
 }
 
-//todo => delete et modif utilisateur
+//Input permettant d'ajouter un utilisateur

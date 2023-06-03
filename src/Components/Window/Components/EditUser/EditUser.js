@@ -1,6 +1,7 @@
 import styles from "./EditUser.module.scss";
 
 export function EditUser({ setToggleEdit, toggleEdit }) {
+  //mode édition on/off
   function handleEdit(e) {
     e.stopPropagation();
     setToggleEdit(!toggleEdit);
