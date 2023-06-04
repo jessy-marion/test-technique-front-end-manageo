@@ -1,25 +1,41 @@
 .user {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.display {
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 }
 
 .name {
+  overflow-wrap: break-word;
   font-size: 2rem;
 }
 
 .mail {
+  word-wrap: break-word;
   font-size: 1.6rem;
 }
 
 .edit {
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 }
 .input {
   font-size: 1.6rem;
   width: 70%;
   margin: 0.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
 .btn {

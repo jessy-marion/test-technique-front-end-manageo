@@ -25,6 +25,7 @@ export function User({ user, users, setUsers }) {
   function handleChange(e) {
     if (e.target.name === "last-name") {
       setNom(e.target.value);
+
       console.log(nom);
     } else if (e.target.name === "first-name") {
       setPrenom(e.target.value);
@@ -116,7 +117,7 @@ export function User({ user, users, setUsers }) {
         return (
           <div className={styles.user} key={user.nom + index}>
             {!toggleEdit && (
-              <span>
+              <span className={styles.display}>
                 <p className={styles.name}>{`${user.prenom} ${user.nom}`}</p>
                 <p className={styles.mail}>{user.mail}</p>
               </span>

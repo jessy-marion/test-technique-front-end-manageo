@@ -10,7 +10,7 @@ export function Window() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("/datas/users.json");
+        const response = await fetch("/datas/empty.json");
         if (response.ok) {
           const datas = await response.json();
           const sortDatas = Object.values(datas).sort((a, b) => {
@@ -28,7 +28,7 @@ export function Window() {
 
   return (
     <div className={styles.window}>
-      <h1>Liste app</h1>
+      <h1 className={styles.title}>Liste app</h1>
       <AddUser users={users} setUsers={setUsers} />
       <Users users={users} setUsers={setUsers} />
     </div>
