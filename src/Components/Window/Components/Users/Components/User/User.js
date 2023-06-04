@@ -17,24 +17,24 @@ export function User({ user, users, setUsers }) {
     setUserStates(initialUserStates);
   }, [users]);
 
+  //edition pour chaques elements
   function handleToggleEdit(index) {
     const updatedUserStates = [...userStates];
     updatedUserStates[index] = !updatedUserStates[index];
     setUserStates(updatedUserStates);
   }
+
+  //récupération des inputs
   function handleChange(e) {
     if (e.target.name === "last-name") {
       setNom(e.target.value);
-
-      console.log(nom);
     } else if (e.target.name === "first-name") {
       setPrenom(e.target.value);
-      console.log(prenom);
     } else {
       setMail(e.target.value);
-      console.log(mail);
     }
   }
+  //modifications
   function update(familleIndex, personneIndex, users, index, memeFamille) {
     const arrayCopy = users.slice();
     const nbPersonnes = users[familleIndex].personnes.length > 1;
@@ -46,26 +46,19 @@ export function User({ user, users, setUsers }) {
     };
 
     if (memeFamille) {
-      console.log("fonction first");
-      console.log(updatedUser);
       arrayCopy[familleIndex].personnes.splice(personneIndex, 1, updatedUser);
       setUsers(sort([...arrayCopy]));
     } else if (!memeFamille && index >= 0) {
-      console.log("pas bon");
       if (nbPersonnes) {
         arrayCopy[index].personnes.push(updatedUser);
         arrayCopy[familleIndex].personnes.splice(personneIndex, 1);
         setUsers(sort([...users]));
       } else {
-        console.log("voi si c'est la");
         arrayCopy[index].personnes.push(updatedUser);
         arrayCopy.splice(familleIndex, 1);
         setUsers(sort([...arrayCopy]));
       }
-      console.log(users);
     } else if (index === -1) {
-      console.log("ici");
-      console.log(users);
       if (nbPersonnes) {
         arrayCopy[familleIndex].personnes.splice(personneIndex, 1);
         setUsers(
@@ -80,6 +73,7 @@ export function User({ user, users, setUsers }) {
     }
   }
 
+  //soumission
   function handleSubmit(user) {
     if (
       onlyLetters.test(nom) &&
@@ -95,16 +89,11 @@ export function User({ user, users, setUsers }) {
       const index = users.findIndex((obj) => obj.nomdefamille === nom);
 
       if (index !== -1 && users[familleIndex].nomdefamille === nom) {
-        console.log("first");
-
         update(familleIndex, personneIndex, users, index, true);
         handleToggleEdit(familleIndex);
       } else if (index !== -1 && users[familleIndex].nomdefamille !== nom) {
-        console.log("second");
         update(familleIndex, personneIndex, users, index, false);
       } else {
-        console.log("third");
-        console.log(users);
         update(familleIndex, personneIndex, users, index, false);
       }
     }
@@ -162,5 +151,3 @@ export function User({ user, users, setUsers }) {
     </>
   );
 }
-
-//todo : lorsque je modifie un utilisateur dans un groupe avec deux users il reste dans le groupe meme si les noms sont differents

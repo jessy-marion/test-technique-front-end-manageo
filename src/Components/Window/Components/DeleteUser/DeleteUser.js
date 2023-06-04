@@ -18,7 +18,7 @@ export function DeleteUser({ users, setUsers, user }) {
       //
       (obj) => obj.personnes.length > 0
     );
-    console.log(users);
+
     setUsers(updatedDatas);
   }
 

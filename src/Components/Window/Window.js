@@ -19,9 +19,7 @@ export function Window() {
 
           setUsers(sortDatas);
         }
-      } catch (e) {
-        console.log(e);
-      }
+      } catch (e) {}
     }
     fetchUsers();
   }, []);
@@ -34,5 +32,3 @@ export function Window() {
     </div>
   );
 }
-
-// Récupérer les données au plus haut niveau
